@@ -1,17 +1,14 @@
 import copy
 
 class WorkExperience:
-    company = ""
-    time_area = ""
+    def __init__(self):
+        self.company = ""
+        self.time_area = ""
 
 class Resume:
-    name = ""
-    sex = ""
-    age = ""
-    work_experience = WorkExperience()
-
     def __init__(self, n):
         self.name = n
+        self.work_experience = WorkExperience()
 
     def set_personal_info(self, s, a):
         self.sex = s
@@ -26,7 +23,7 @@ class Resume:
               + self.work_experience.company + " : " + self.work_experience.time_area
 
     def clone(self):
-        new_resume =  copy.deepcopy(self)
+        new_resume = copy.deepcopy(self)
         new_resume.work_experience = copy.deepcopy(self.work_experience)
         return new_resume
 

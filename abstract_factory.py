@@ -10,6 +10,7 @@ class IUser:
     def insert_user(self, user):
         """insert user"""
 
+    @abc.abstractmethod
     def get_user(self):
         """get user"""
 
