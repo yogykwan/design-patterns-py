@@ -1,5 +1,6 @@
 import abc
 
+
 class HandsetSoft:
     __metaclass__ = abc.ABCMeta
 
@@ -7,13 +8,16 @@ class HandsetSoft:
     def run(self):
         """soft run"""
 
+
 class HandsetGame(HandsetSoft):
     def run(self):
         print "run game"
 
+
 class HandsetAddressList(HandsetSoft):
     def run(self):
         print "run address list"
+
 
 class HandsetBrand:
     __metaclass__ = abc.ABCMeta
@@ -25,15 +29,18 @@ class HandsetBrand:
     def run(self):
         """run"""
 
+
 class HandsetBrandM(HandsetBrand):
     def run(self):
         print "handset brand M : ",
         self.soft.run()
 
+
 class HandsetBrandN(HandsetBrand):
     def run(self):
         print "handset brand N : ",
         self.soft.run()
+
 
 if __name__ == "__main__":
     handset_brand_m = HandsetBrandM(HandsetGame())
@@ -45,4 +52,3 @@ if __name__ == "__main__":
     handset_brand_n.run()
     handset_brand_n = HandsetBrandN(HandsetAddressList())
     handset_brand_n.run()
-

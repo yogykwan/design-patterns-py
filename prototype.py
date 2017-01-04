@@ -1,9 +1,11 @@
 import copy
 
+
 class WorkExperience:
     def __init__(self):
         self.company = ""
         self.time_area = ""
+
 
 class Resume:
     def __init__(self, n):
@@ -26,6 +28,7 @@ class Resume:
         new_resume = copy.deepcopy(self)
         new_resume.work_experience = copy.deepcopy(self.work_experience)
         return new_resume
+
 
 if __name__ == "__main__":
     resume1 = Resume("Bob")
@@ -63,6 +66,3 @@ if __name__ == "__main__":
     resume2.set_work_experience("Twitter", "2015")
     resume1.print_resume()
     resume2.print_resume()
-
-
-

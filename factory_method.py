@@ -1,5 +1,6 @@
 import abc
 
+
 class Leifeng:
     __metaclass__ = abc.ABCMeta
 
@@ -63,11 +64,6 @@ if __name__ == "__main__":
     leifeng.sweep()
 
     # create volunteer to wash
-    i_factory = VolunteerFactory()  #just replace UndergraduateFactory with VolunteerFactory
+    i_factory = VolunteerFactory()  # just replace UndergraduateFactory with VolunteerFactory
     leifeng = i_factory.CreateLeifeng()
     leifeng.wash()
-
-
-
-
-

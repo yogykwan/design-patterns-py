@@ -21,6 +21,7 @@ class Reality1:
     def sell(self):
         print "sell reality1"
 
+
 class Fund:
     def __init__(self):
         self.stock1 = Stock1()
@@ -36,6 +37,7 @@ class Fund:
         self.stock1.sell()
         self.stock2.sell()
         self.reality1.sell()
+
 
 if __name__ == "__main__":
     fund = Fund()

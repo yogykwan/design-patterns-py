@@ -1,5 +1,6 @@
 import abc
 
+
 class Company:
     __metaclass__ = abc.ABCMeta
 
@@ -18,6 +19,7 @@ class Company:
     def line_of_duty(self):
         """duty line"""
 
+
 class HrDepartment(Company):
     def __init__(self, n):
         Company.__init__(self, n)
@@ -31,6 +33,7 @@ class HrDepartment(Company):
     def line_of_duty(self):
         print self.name + " : human resources"
 
+
 class FinanceDepartment(Company):
     def __init__(self, n):
         Company.__init__(self, n)
@@ -43,6 +46,7 @@ class FinanceDepartment(Company):
 
     def line_of_duty(self):
         print self.name + " : finance analysis"
+
 
 class ConcreteCompany(Company):
     def __init__(self, n):
@@ -61,21 +65,22 @@ class ConcreteCompany(Company):
         for company in self.companies:
             company.line_of_duty()
 
+
 if __name__ == "__main__":
     beijing_head_office = ConcreteCompany("Beijing Head Office")
     beijing_head_office.add(HrDepartment("Beijing HR"))
     beijing_head_office.add(FinanceDepartment("Beijing Finance"))
-    
+
     huadong_branch_office = ConcreteCompany("Huadong Branch Office")
     huadong_branch_office.add(HrDepartment("Huadong HR"))
     huadong_branch_office.add(FinanceDepartment("Huadong Finance"))
     beijing_head_office.add(huadong_branch_office)
-    
+
     nanjing_office = ConcreteCompany("Nanjing Office")
     nanjing_office.add(HrDepartment("Nanjing HR"))
     nanjing_office.add(FinanceDepartment("Nanjing Finance"))
     huadong_branch_office.add(nanjing_office)
-    
+
     hangzhou_office = ConcreteCompany("Hangzhou Office")
     hangzhou_office.add(HrDepartment("Hangzhou HR"))
     hangzhou_office.add(FinanceDepartment("Hangzhou Finance"))

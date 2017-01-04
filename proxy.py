@@ -1,5 +1,6 @@
 import abc
 
+
 class GiveGift:
     __metaclass__ = abc.ABCMeta
 
@@ -15,9 +16,11 @@ class GiveGift:
     def give_flowers(self):
         """give flowers"""
 
+
 class SchoolGirl:
     def __init__(self, n):
         self.name = n
+
 
 class Pursuit(GiveGift):
     def __init__(self, sg):
@@ -30,6 +33,7 @@ class Pursuit(GiveGift):
     def give_flowers(self):
         print "give " + self.school_girl.name + " flowers"
 
+
 class Proxy(GiveGift):
     def __init__(self, sg):
         GiveGift.__init__(self, sg)
@@ -40,6 +44,7 @@ class Proxy(GiveGift):
 
     def give_flowers(self):
         self.pursuit.give_flowers()
+
 
 if __name__ == "__main__":
     school_girl = SchoolGirl("Alice")

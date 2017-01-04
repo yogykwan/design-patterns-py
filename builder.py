@@ -1,10 +1,13 @@
 import abc
 
+
 class Pen:
     """class pen"""
 
+
 class Graphics:
     """class graphics"""
+
 
 class PersonBuilder:
     __metaclass__ = abc.ABCMeta
@@ -21,6 +24,7 @@ class PersonBuilder:
     def BuildBody(self):
         """build body"""
 
+
 class PersonThinBuilder(PersonBuilder):
     def BuildHead(self):
         print "build thin head"
@@ -35,6 +39,7 @@ class PersonFatBuilder(PersonBuilder):
 
     def BuildBody(self):
         print "build fat body"
+
 
 class PersonDirector:
     def __init__(self, pb):
@@ -52,6 +57,6 @@ if __name__ == "__main__":
     director.create_person()
 
     # build fat person
-    person_builder = PersonFatBuilder(Pen(), Graphics())    #only replace PersonThinBuilder with PersonFatBuilder
+    person_builder = PersonFatBuilder(Pen(), Graphics())  # only replace PersonThinBuilder with PersonFatBuilder
     director = PersonDirector(person_builder)
     director.create_person()

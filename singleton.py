@@ -1,5 +1,6 @@
 import threading
 
+
 class Singleton(object):
     instance = None
     lock = threading.RLock()
@@ -12,6 +13,7 @@ class Singleton(object):
                 cls.instance = super(Singleton, cls).__new__(cls)
             cls.lock.release()
         return cls.instance
+
 
 if __name__ == "__main__":
     instance1 = Singleton()
